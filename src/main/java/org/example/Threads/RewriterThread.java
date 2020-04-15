@@ -44,7 +44,7 @@ public class RewriterThread extends Thread {
             }
             fileReader.close();
             semaphore.release();
-            sleep(1000);
+            sleep(100);
             if (flag) {
                 this.run();
             }

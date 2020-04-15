@@ -4,12 +4,17 @@ package org.example;
 import org.example.Threads.ExecuteThreads;
 import org.example.Threads.RewriterThread;
 
+import java.util.Scanner;
 import java.util.concurrent.Semaphore;
 
 public class App {
     public static void main(String[] args) {
+
+        System.out.print("Введите четное n больше 0\n");
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
         try {
-            ExecuteThreads.Execute("out.txt", 10);
+            ExecuteThreads.Execute("out.txt", n);
         } catch (Exception e) {
             e.printStackTrace();
         }
