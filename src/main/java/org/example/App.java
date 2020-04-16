@@ -2,6 +2,7 @@ package org.example;
 
 
 import org.example.Threads.ExecuteThreads;
+import org.example.Threads.InputDataException;
 import org.example.Threads.RewriterThread;
 
 import java.util.Scanner;
@@ -15,7 +16,10 @@ public class App {
         int n = scanner.nextInt();
         try {
             ExecuteThreads.Execute("out.txt", n);
-        } catch (Exception e) {
+        } catch (InputDataException e){
+            System.out.print( e.getExceptionDescribe());
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
 

@@ -8,7 +8,7 @@ import java.util.concurrent.Semaphore;
 
 public class ExecuteThreads {
     public static void Execute(String fileName, int incrementNumber) throws InputDataException {
-        if(incrementNumber<=0){
+        if (incrementNumber <= 0) {
             throw new InputDataException("Введенное n - меньше или равно нулю ,это протеворечит условиям задачи");
         }
         if (incrementNumber % 2 != 0) {
@@ -24,11 +24,6 @@ public class ExecuteThreads {
             thread1.start();
             RewriterThread thread2 = new RewriterThread("thread", fileName, incrementNumber, semaphore);
             thread2.start();
-            /*FileReader fileReader = new FileReader(fileName);
-            Scanner scan = new Scanner(fileReader);
-            if (scan.hasNextLine()) {
-                System.out.print("Содержимое файла " + fileName + " " + scan.nextLine());
-            }*/
         } catch (IOException e) {
             e.printStackTrace();
         }
