@@ -20,9 +20,9 @@ public class ExecuteThreads {
             fileWriter.flush();
             fileWriter.close();
             Semaphore semaphore = new Semaphore(1);
-            RewriterThread thread1 = new RewriterThread("thread1", fileName, incrementNumber, semaphore);
+            RewriterThread thread1 = new RewriterThread("thread", fileName, incrementNumber, semaphore);
             thread1.start();
-            RewriterThread thread2 = new RewriterThread("thread2", fileName, incrementNumber, semaphore);
+            RewriterThread thread2 = new RewriterThread("thread", fileName, incrementNumber, semaphore);
             thread2.start();
             /*FileReader fileReader = new FileReader(fileName);
             Scanner scan = new Scanner(fileReader);
